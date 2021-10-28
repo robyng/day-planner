@@ -1,6 +1,6 @@
-var date = document.querySelector("#currentDay")
+var date = document.querySelector(".time-block")
 
-date.textContent = moment().format('MMMM Do YYYY, h:mm:ss a');
+date.textContent = moment().format('MMMM Do YYYY, kk:mm:ss');
 
 //var hourEl = document.querySelector('#')
 //currentHour = moment().format('h');
@@ -90,7 +90,7 @@ for (i = 0; i < allTimes.length; i++) {
         //console.log(true)
         $(eachTime).addClass("present")
     
-    } else if (moment(eachTime.textContent).isAfter(rightNow, 'hour') ){
+    } else if (moment(eachTime.textContent).isAfter(rightNow, 'kk') ){
         $(eachTime).addClass("future")
 
     } else {
