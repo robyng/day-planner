@@ -90,8 +90,9 @@ for (i = 0; i < allTimes.length; i++) {
         //console.log(true)
         $(eachTime).addClass("present")
     
-    // } else if (eachTime.isAfter(rightNow) == true ){
-    //     $(eachTime).addClass("future")
+    } else if (moment(eachTime.textContent).isAfter(rightNow, 'hour') ){
+        $(eachTime).addClass("future")
+
     } else {
         $(eachTime).addClass("past")
     }
