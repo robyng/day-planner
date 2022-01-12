@@ -60,8 +60,8 @@ time17.siblings(".saveBtn").on("click", function(){
     localStorage.setItem("17", time17.val())
 })
 
-var rightNow = moment().format("kk");
-
+var rightNow = parseInt(moment().format("kk"));
+console.log(rightNow)
 
 // var nextHour = moment().add(1, "hour").format("kk");
 // var pastDate = moment("12-01-1999", "MM-DD-YYYY").format("dddd, MM/DD/YY");
@@ -82,15 +82,14 @@ var allTimes = [hourEl09, hourEl10, hourEl11, hourEl12, hourEl13, hourEl14, hour
 
 
 for (i = 0; i < allTimes.length; i++) {
-    
 
     eachTime = allTimes[i]
 
-    if (eachTime.textContent == rightNow) {
+    if (parseInt(eachTime.textContent) == rightNow) {
         //console.log(true)
         $(eachTime).addClass("present")
     
-    } else if (moment(eachTime.textContent).isAfter(rightNow, 'kk') ){
+    } else if (rightNow < parseInt(eachTime.textContent)){
         $(eachTime).addClass("future")
 
     } else {
